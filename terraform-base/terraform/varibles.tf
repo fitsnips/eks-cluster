@@ -1,6 +1,6 @@
 variable "tfstate_name" {
   description = "The name of the s3 bucket this module creates to hold TF state files, not setting a default for this module"
-  default     = "company-terraform-state"
+  default     = "company-terraform-state" 
 }
 
 variable "region" {
