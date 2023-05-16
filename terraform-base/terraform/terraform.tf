@@ -1,14 +1,14 @@
 # after successful first run comment out this TF block:
-# terraform {
-#   required_version = "~> 1.3"
+terraform {
+  required_version = "~> 1.3"
 
-#   required_providers {
-#     aws = {
-#         source = "hashicorp/aws"
-#         version = "~> 4.0"
-#     }
-#   }
-# }
+  required_providers {
+    aws = {
+        source = "hashicorp/aws"
+        version = "~> 4.0"
+    }
+  }
+}
 
 # after successful first run uncomment out this TF block
 # and run another terraform init
@@ -21,23 +21,23 @@
 #   Enter a value: yes
 # if you changed the region or tfstate_name you will have 
 # update this block:
-terraform {
-  required_version = "~> 1.4"
+# terraform {
+#   required_version = "~> 1.4"
 
-  backend "s3" {
-    acl                  = "private"
-    bucket               = "infra-k8-poc"
-    dynamodb_table       = "infra-k8-poc"
-    encrypt              = true
-    key                  = "terraform-base/terraform.tfstate"
-    region               = "us-east-1"
-    workspace_key_prefix = "terraform-base"
-  }
+#   backend "s3" {
+#     acl                  = "private"
+#     bucket               = "infra-k8-poc"
+#     dynamodb_table       = "infra-k8-poc"
+#     encrypt              = true
+#     key                  = "terraform-base/terraform.tfstate"
+#     region               = "us-east-1"
+#     workspace_key_prefix = "terraform-base"
+#   }
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
+#   required_providers {
+#     aws = {
+#       source  = "hashicorp/aws"
+#       version = "~> 4.0"
+#     }
+#   }
+# }
