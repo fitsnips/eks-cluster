@@ -10,7 +10,7 @@ terraform {
   }
 }
 
-# after successful first run uncomment out this TF block
+# after successful first run uncomment out this TF block fix the bucket name
 # and run another terraform init
 # Do you want to copy existing state to the new backend?
 #   Pre-existing state was found while migrating the previous "local" backend to the
@@ -26,8 +26,8 @@ terraform {
 
 #   backend "s3" {
 #     acl                  = "private"
-#     bucket               = "infra-k8-poc"
-#     dynamodb_table       = "infra-k8-poc"
+#     bucket               = "company-terraform-state"
+#     dynamodb_table       = "company-terraform-state"
 #     encrypt              = true
 #     key                  = "terraform-base/terraform.tfstate"
 #     region               = "us-east-1"
