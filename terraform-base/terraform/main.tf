@@ -66,6 +66,7 @@ resource "aws_s3_bucket_acl" "remote_state_logging" {
     }
   }
 
+
 }
 
 # versioning of tfstate files is life saving!
@@ -113,6 +114,13 @@ resource "aws_s3_bucket_logging" "remote_state" {
 
   target_bucket = aws_s3_bucket.remote_state_logging.id
   target_prefix = var.tfstate_name
+}
+
+resource "aws_s3_bucket_ownership_controls" "remote_state" {
+  bucket = aws_s3_bucket.remote_state.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
 
 resource "aws_s3_bucket_acl" "remote_state" {
