@@ -34,6 +34,13 @@ resource "aws_s3_bucket" "remote_state_logging" {
 
 data "aws_canonical_user_id" "current" {}
 
+resource "aws_s3_bucket_ownership_controls" "remote_state_logging" {
+  bucket = aws_s3_bucket.remote_state_logging.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 resource "aws_s3_bucket_acl" "remote_state_logging" {
   bucket = aws_s3_bucket.remote_state_logging.id
 
