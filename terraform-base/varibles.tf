@@ -11,6 +11,6 @@ variable "tags_default" {
   description = "map of tags added to all components managed by this code"
   default = {
     "builtBy"   = "terraform"
-    "component" = "terraform-state-managment"
+    "component" = "terraform-base"
   }
 }
