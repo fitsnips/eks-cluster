@@ -103,9 +103,9 @@ resource "aws_s3_bucket_public_access_block" "remote_state_logging" {
 resource "aws_s3_bucket" "remote_state" {
   bucket = var.tfstate_name
   force_destroy = true  
-  # lifecycle {
-  #   prevent_destroy = true
-  # }
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_s3_bucket_logging" "remote_state" {
